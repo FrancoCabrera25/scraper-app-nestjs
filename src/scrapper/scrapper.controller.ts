@@ -7,6 +7,6 @@ export class ScrapperController {
 
   @Get()
   findAll() {
-    return this.scrapperService.getDataViaPuppeteer();
+    // return this.scrapperService.getDataProducstByPuppeteer();
   }
 }

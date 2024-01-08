@@ -3,6 +3,8 @@ import { ProductsService as ProductService } from './product.service';
 import { ProductsController as ProductController } from './product.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Product, ProductSchema } from './entities/product.entity';
+import { ScrapperModule } from '../scrapper/scrapper.module';
+import { ProductBasketModule } from '../products-basket/product-basket.module';
 
 @Module({
   controllers: [ProductController],
@@ -14,6 +16,8 @@ import { Product, ProductSchema } from './entities/product.entity';
         schema: ProductSchema,
       },
     ]),
+    ScrapperModule,
+    ProductBasketModule,
   ],
   exports: [MongooseModule],
 })
