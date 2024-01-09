@@ -59,8 +59,7 @@ export class ScrapperService {
   }
 
   private async setConfiguration(): Promise<void> {
-    if (process.env.AWS_LAMBDA_FUNCTION_VERSION === 'true') {
-      console.log('lalala', process.env.AWS_LAMBDA_FUNCTION_VERSION);
+    if (process.env.SCRAPPER_DEPLOY === 'true') {
       this.chrome = require('chrome-aws-lambda');
       this.puppeteer = require('puppeteer-core');
       this.options = {
